@@ -1,64 +1,49 @@
-document.addEventListener('DOMContentLoaded', function () {
-    let swiper;
-    function initSwiper() {
-        const swiperElement = document.getElementById('swiper');
-
-        if (window.innerWidth < 768) {
-            if (!swiper) {
-                swiper = new Swiper(swiperElement, {
-                    slidesPerView: 1.5,
-                    spaceBetween: 10,
-                    pagination: {
-                        el: '.slider__pagination',
-                    },
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
-                    breakpoints: {
-                        768: {
-                            enabled: false,
-                        }
-                    }
-                });
-            }
-        } else if (swiper) {
-            swiper.destroy(true, true);
-            swiper = null;
+const swiper = new Swiper(".swiper", {
+    slidesPerView: "auto",
+    spaceBetween: 16,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    breakpoints: {
+        400: {
+            enabled: false,
+            spaceBetween: 0
         }
     }
-
-    initSwiper();
-    window.addEventListener('resize', initSwiper);
 });
 
-
 const toggleButton = document.querySelector('.main--button_hide-button');
-const hiddenItems = document.querySelectorAll('.hidden');
-const hiddenTabletItems = document.querySelectorAll('.hidden_tablet');
-// Начальная установка текста и класса для стрелки
+const allBrandCards = document.querySelectorAll('.brand-card');
+
 toggleButton.textContent = 'Показать всё';
 toggleButton.classList.add('show-all');
 
+const hiddenElements = {
+    desktop: document.querySelectorAll('.brand-card.hidden'),
+    tablet: document.querySelectorAll('.brand-card.hidden_tablet')
+};
+
 toggleButton.addEventListener('click', () => {
-    // Скрытые элементы для ПК
-    hiddenItems.forEach(item => {
-        item.classList.toggle('hidden');
-    });
+    const isShowingAll = toggleButton.textContent.trim() === 'Показать всё';
 
-    // Скрытые элементы для планшета
-    hiddenTabletItems.forEach(item => {
-        item.classList.toggle('hidden_tablet');
-    });
-
-    // Текст кнопки
-    if (toggleButton.textContent.trim() === 'Показать всё') {
-        toggleButton.textContent = 'Скрыть';
-        toggleButton.classList.remove('show-all');
-        toggleButton.classList.add('hide-all'); // Стрелка вверх
+    if (isShowingAll) {
+        allBrandCards.forEach(card => {
+            card.classList.remove('hidden', 'hidden_tablet');
+        });
     } else {
-        toggleButton.textContent = 'Показать всё';
-        toggleButton.classList.remove('hide-all'); 
-        toggleButton.classList.add('show-all');
+        if (window.innerWidth >= 1120) {
+            hiddenElements.desktop.forEach(card => card.classList.add('hidden'));
+            hiddenElements.tablet.forEach(card => card.classList.remove('hidden_tablet'));
+        } else if (window.innerWidth >= 768) {
+            hiddenElements.tablet.forEach(card => card.classList.add('hidden_tablet'));
+            hiddenElements.desktop.forEach(card => card.classList.remove('hidden'));
+        }
     }
+
+    toggleButton.textContent = isShowingAll ? 'Скрыть' : 'Показать всё';
+    toggleButton.classList.toggle('show-all', !isShowingAll);
+    toggleButton.classList.toggle('hide-all', isShowingAll);
+
+    document.querySelector('.swiper-container').style.height = 'auto';
 });
