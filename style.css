@@ -1,157 +1,204 @@
 /* Шрифт */
-@font-face 
-{
+@font-face {
     font-family: 'TT Lakes';
     src: url(public/TTLakes/TTLakes-Regular.woff) format("truetype");
-    font-weight:normal;
+    font-weight: normal;
     font-style: normal;
 }
 
-@font-face 
-{
+@font-face {
     font-family: 'TT Lakes';
     src: url(public/TTLakes/TTLakes-Bold.woff) format("truetype");
-    font-weight:bold;
+    font-weight: bold;
     font-style: normal;
 }
 
-@font-face 
-{
+@font-face {
     font-family: 'TT Lakes Medium';
     src: url(public/TTLakes/TTLakes-Medium.woff) format("truetype");
     font-weight: 500;
     font-style: normal;
 }
- 
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
 }
 
- 
+body {
+    font-family: 'TT Lakes', sans-serif;
+    overflow-x: hidden;
+}
 
-/* заголовок сайта*/
-.poster__title {
-     color: #7E7E82;
-    padding: 10px 0;
+.brands-section {
+    max-width: 1120px;
+    margin: 0 auto;
     border-top: 1px solid #D9FFF5;
-    padding: 20px;
-    text-transform: uppercase;
-    font-family: TT Lakes;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.20000000298023224px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
 }
-.buttom--go {
-  display: block;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  background: url('public/img/go.svg');
-  transition: 0.3s;
-  cursor: pointer;
 
+.brands-title {
+    display: inline-block;
+    width:100%;
+    height:80px;
+    margin:0;
+    padding:16px;
+    background: linear-gradient(45grad, #f8f8f8, #ffffff);
+    border-top:1px solid #d9fff5;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 400;
+    color:#7e7e82;
+
+}
+
+.swiper-container {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-wrapper {
+    padding: 16px;
+}
+
+.brand-card {
+    width: 240px;
+    height: 72px;
+}
+
+.brand-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    border-radius: 6px;
+}
+
+.buttom--go {
+    display: block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: url('public/img/go.svg');
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 .buttom--go:hover {
-  opacity: 0.5;
+    opacity: 0.5;
     transition: opacity 0.9s;
 }
 
- button {
-  border: none;
-  background: none;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-  padding: 0;
+.hidden {
+    display: none;
 }
 
-.poster__brands__item {
-  width: 250px;
-  height: 40px;
-  background-color: white;
-  padding: 20px;
-  border: 2px solid #EAEAEA;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-}
 .main--button_hide-button {
-  background: none;
-  border: none;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-  padding: 0;
-  margin-left: 55px;
-  margin-bottom: 15px;
-  position: relative;
-  padding-left: 30px;
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 55px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 30px;
 }
 
 .main--button_hide-button:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 15px;
-  height: 15px;
-  background-image: url("public/img/icon.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  transition: transform 0.3s ease;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 15px;
+    height: 15px;
+    background-image: url("public/img/icon.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.3s ease;
 }
 
 .main--button_hide-button.hide-all:before {
-    transform: translateY(-50%) rotate(0deg); /* Стрелка указывает вниз */
+    transform: translateY(-50%) rotate(0deg);
 }
 
 .main--button_hide-button.show-all:before {
-    transform: translateY(-50%) rotate(180deg); /* Стрелка указывает вверх */
+    transform: translateY(-50%) rotate(180deg);
 }
 
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #DDDDDD;
+    opacity: 0.7;
+}
 
+.swiper-pagination-bullet-active {
+    background: #B5B6BC;
+    opacity: 1;
+}
 
- 
-
+/* Media queries */
 @media (max-width: 767px) {
-  .poster__brands {
-  display: flex !important;
-  gap: 32px !important;
-  flex-grow: 0 !important;
-  margin: 24px 33px 84px 32px;
-  }
-
-  .main--button {
-    display: none;
-  }
-
-
+    .swiper-wrapper {
+        height: 120px;
+   
+    }
+    
+    .main--button {
+        display: none;
+    }
+    
 }
- 
+
+@media (min-width: 768px) {
+    .swiper-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 240px);
+        gap: 16px 24px;
+        padding: 24px 32px;
+        transform: none !important;
+    }
+    
+    .swiper-pagination {
+        display: none;
+    }
+    
+    .brand-card {
+        margin-bottom: 0 !important;
+    }
+  
+}
+
 @media (min-width: 768px) and (max-width: 1119px) {
-
-
-
-.swiper-pagination,
-.slider__pagination,
-.hidden_tablet {
-  display: none !important;
+    .hidden_tablet {
+        display: none;
+    }
+    
+    .hidden_tablet.hidden {
+        display: flex !important;
+    }
 }
-}
- 
+
 @media (min-width: 1120px) {
-.swiper-pagination,
-.slider__pagination,
-  .hidden {
-    display: none !important;
-  }
+    .hidden {
+        display: none;
+    }
+    .hidden.hidden_tablet {
+        display: flex !important;
+    }
 }
