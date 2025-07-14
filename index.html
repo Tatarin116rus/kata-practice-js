@@ -1,78 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Практика 2.1.1</title>     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-         <link rel="stylesheet" href="swiper.css">
+    <title>Ремонт техники</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-    <body>
-     
-    <header class="poster__title">
-            РЕМОНТ ТЕХНИКИ РАЗЛИЧНЫХ БРЕНДОВ 
-    </header> 
+<body>
+    <section class="brands-section">
+        <h2 class="brands-title">Ремонт техники различных брендов</h2>
+        <div class="main__companies-list list" id="companiesList">
+        <div class="swiper-container ">
+            <div class="swiper">
+                <ul class="swiper-wrapper brands-list">
  
-    <div class="poster__brands " id="companiesList">
-        <div class="swiper slider"  id = "swiper">
-        <ul class="swiper-wrapper brands-list slider__slide-list ">
-            <li class="poster__brands__item swiper-slide slider__slide  ">    
-                <img src="public/img/Lenovo.svg" alt=""> 
-                <a class="buttom--go" href="#"></a>
-            </li>               
-            <li class="poster__brands__item swiper-slide slider__slide  ">    
-                <img src="public/img/SAMSUNG.svg"  alt="">
-                <a class="buttom--go" href="#"></a>
-            </li>
-            <li class="poster__brands__item swiper-slide slider__slide ">    
-                <img src="public/img/APPLE.svg"  alt="">
-                <a class="buttom--go" href="#"></a>
-            </li>
-            <li class="poster__brands__item swiper-slide slider__slide ">    
-                <img src="public/img/View.svg"  alt="">
-                <a class="buttom--go" href="#"></a>
-            </li>
-            <li class="poster__brands__item swiper-slide slider__slide ">    
-                <img src="public/img/BOSCH.svg"  alt="">
-                <a class="buttom--go" href="#"></a>   
-            </li>
-            <li class="poster__brands__item swiper-slide slider__slide ">               
-                <img src="public/img/hp.svg" alt="">
-                <a class=" buttom--go" href="#"></a>     
-            </li>
-            <li class="poster__brands__item swiper-slide slider__slide  hidden_tablet">  
-                <img src="public/img/ACER.svg"  alt="">  
-                <a class="buttom--go" href="#"></a>       
-            </li>
-            <li class="poster__brands__item swiper-slide slider__slide  hidden_tablet">  
-                <img src="public/img/SONY.svg"  alt="">   
-                <a class="buttom--go" href="#" ></a>      
-            </li>
-            <li class="poster__brands__item swiper-slide slider__slide  hidden hidden_tablet">    
-                <img src="public/img/Lenovo.svg" alt=""> 
-                <a class="buttom--go" href="#"></a>
-            </li>               
-            <li class="poster__brands__item swiper-slide slider__slide   hidden hidden_tablet ">                   
-                <img src="public/img/SAMSUNG.svg"  alt="">
-                <a class="buttom--go" href="#"  ></a>
-            </li>
-            <li class="poster__brands__item swiper-slide slider__slide  hidden hidden_tablet">    
-                <img src="public/img/APPLE.svg"  alt="">
-                <a class="buttom--go" href="#"  ></a>
-            </li>
-        </ul>
-        <div class="swiper-pagination slider__pagination">    
-        </div> 
-    </div>  
-   
-           
+                     <li class="swiper-slide brand-card brand-content">
+                        <img src="public/img/Lenovo.svg" alt=""> 
+                        <a class="buttom--go" href="#"></a>
+                    </li>
+                    <li class="swiper-slide brand-card brand-content">
+                        <img src="public/img/SAMSUNG.svg" alt=""> 
+                        <a class="buttom--go" href="#"></a>
+                    </li>
+                    <li class="swiper-slide brand-card brand-content">
+                        <img src="public/img/APPLE.svg" alt=""> 
+                        <a class="buttom--go" href="#"></a>
+                    </li>
+                    <li class="swiper-slide brand-card brand-content">
+                        <img src="public/img/View.svg" alt=""> 
+                        <a class="buttom--go" href="#"></a>
+                    </li>
+                    <li class="swiper-slide brand-card brand-content">
+                        <img src="public/img/BOSCH.svg" alt=""> 
+                        <a class="buttom--go" href="#"></a>
+                    </li>
+                    <li class="swiper-slide brand-card brand-content">
+                        <img src="public/img/hp.svg" alt=""> 
+                        <a class="buttom--go" href="#"></a>
+                    </li>
+                    <li class="swiper-slide brand-card brand-content hidden_tablet">
+                        <img src="public/img/ACER.svg" alt=""> 
+                        <a class="buttom--go" href="#"></a>
+                    </li>
+                    <li class="swiper-slide brand-card brand-content hidden_tablet">
+                        <img src="public/img/SONY.svg" alt=""> 
+                        <a class="buttom--go" href="#"></a>
+                    </li>
+                    <li class="swiper-slide brand-card brand-content hidden">
+                        <img src="public/img/Lenovo.svg" alt=""> 
+                        <a class="buttom--go" href="#"></a>
+                    </li>
+                    <li class="swiper-slide brand-card brand-content hidden">
+                        <img src="public/img/SAMSUNG.svg" alt=""> 
+                        <a class="buttom--go" href="#"></a>
+                    </li>
+                    <li class="swiper-slide brand-card brand-content hidden">
+                        <img src="public/img/APPLE.svg" alt=""> 
+                        <a class="buttom--go" href="#"></a>
+                    </li>
+                </ul>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+        <div class="main--button">
+             <button class="main--button_hide-button" id="hideButton">Показать всё</button>
+        </div>
+    </section>
 
-<div class = "main--button">
-  <button class = "main--button_hide-button" id="hideButton"> Показать всё</button>
-</div>
-
-    	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
